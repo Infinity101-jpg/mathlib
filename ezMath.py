@@ -9,14 +9,9 @@ def PrintNumCorrectly(x):
   print('000', end='')
 
 def sin_approx(x):
-    if 0 <= x <= 0.504:
-        return x * 0.968  # Linear segment
-    elif 0.504 < x <= 2.637:
-        return -0.45 * (x - PI / 2)**2 + 1  # Quadratic peak around π/2
-    elif 2.637 < x <= PI:
-        return -0.968 * (x - PI)  # Symmetric drop-off
-    else:
-        raise ValueError("Input x is out of bounds for this approximation")
+    return abs(
+      x - (x*x*x/6) + (x*x*x*x*x/120) - (x*x*x*x*x*x*x/5040) + (x*x*x*x*x*x*x*x*x/362880)
+    )
 
 # Optional: check continuity at junctions
 
