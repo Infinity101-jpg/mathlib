@@ -1,4 +1,5 @@
-PI = 3.1416
+
+PI = 6911503170 / 2200000000                             #### Pi Approx = Unknown
 
 def StoreNumCorrectly(x):
   return round(x,4) + 0.00000000001;
@@ -9,7 +10,9 @@ def PrintNumCorrectly(x):
   print('000', end='')
 
 def sin_approx(x):
-    return -0.00383 * (x**3 + 100 * x**2 - 100 * math.pi * x - x * math.pi**1.748)
+    a = 16 * x * (PI - x);
+    b = 5 * PI*PI - 4 * x * (PI - x);
+    return a / b;                                         #### Sin approx= Bhaskara I approximation
 
 # Optional: check continuity at junctions
 
