@@ -9,9 +9,7 @@ def PrintNumCorrectly(x):
   print('000', end='')
 
 def sin_approx(x):
-    return abs(
-      x - (x*x*x/6) + (x*x*x*x*x/120) - (x*x*x*x*x*x*x/5040) + (x*x*x*x*x*x*x*x*x/362880)
-    )
+    return -0.00383 * (x**3 + 100 * x**2 - 100 * math.pi * x - x * math.pi**1.748)
 
 # Optional: check continuity at junctions
 
