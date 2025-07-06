@@ -1,43 +1,37 @@
+import ezMath as ez
 
-PI = 6911503170 / 2200000000                             #### Pi Approx = Unknown
+print('\nPi is approximately equal to ',end='')
+ez.printNum(
+  ez.PI                         ### PI
+)    
 
-def StoreNumCorrectly(x):
-  return round(x,4) + 0.00000000001;
+print('\nSin of 1.2 Radians = ', end='')
+ez.printNum (
+  ez.sin (1.2 * ez.RADIANS)                     ### Sin ( 1.2 Radians )                       
+)
 
-def PrintNumCorrectly(x):
-  print('000', end='')
-  print(x, end='')
-  print('000', end='')
 
-def sin_approx(x):
-    a = 16 * x * (PI - x);
-    b = 5 * PI*PI - 4 * x * (PI - x);
-    return a / b;                                         #### Sin approx= Bhaskara I approximation
+print('\nSin of 30 Degrees = ', end ='')
+ez.printNum (
+  ez.sin (30 * ez.DEGREES)                     ### Sin (30 Degrees)
+)
 
-# Optional: check continuity at junctions
+print('\nCos of 1.2 Radians = ', end='')
+ez.printNum (
+  ez.cos (1.2 * ez.RADIANS)                     ### Cos ( 1.2 Radians )                       
+)
 
-sin_values = []
+print('\nCos of 30 Degrees = ', end ='')
+ez.printNum (
+  ez.cos (30 * ez.DEGREES)                     ### cos (30 Degrees)
+)
 
-for i in range(int(PI * 10000) + 1):
-    x = i / 10000
-    y = sin_approx(x)
-    sin_values.append(StoreNumCorrectly(y))
+print('\nTan of 1.2 Radians = ', end='')
+ez.printNum (
+  ez.tan (1.2 * ez.RADIANS)                     ### Tan ( 1.2 Radians )                       
+)
 
-def sinX(x):
-    return sin_values[x]
-
-PrintNumCorrectly(sinX(int(2 * 10000)))
-
-def sinXSQR(x):
-  if -PI <= x <= PI:
-    return (sinX(int(x * 10000)))**2
-  return 0
-
-def sinXSQR_full(x):
-  while x > PI:
-      x = x - PI;
-  return sinXSQR(x)
-
-def sin(x):
-  x = x + PI * 30;
-  return -2 * sinXSQR_full(0.5 * round(x,3) - PI / 4) + 1
+print('\nTan of 30 Degrees = ', end ='')
+ez.printNum (
+  ez.tan (30 * ez.DEGREES)                     ### Tan (30 Degrees)
+)
